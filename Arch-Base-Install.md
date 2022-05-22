@@ -1,10 +1,15 @@
 # Arch Linux Base install guide
 #### Quick arch install guide
-
+#### Before install
+1. download arch iso and flash it onto usb stick with program called BalenaEtcher
+2. plug your usb stick into you machine 
+3. enter BIOS by pressing f2 when booting
+4. go to boot settings and move your usb stick to the top of the load order (also if there is secure boot setting disable it)
+5. save changes and exit bios
 
 ## Connect to internet (wifi)
 start the iwctl tool 
-```bash
+```
 iwctl
 ```
 scan for networks
@@ -196,6 +201,45 @@ press I and uncomment it so it looks like this
 %wheel ALL=(ALL:ALL) ALL
 ```
 save and exit by pressing Ecs and :wq
+
+## Setup grub (bootloader)
+download required packages
+```
+pacman -S grub efibootmgr dosfstools os-prober mtools
+```
+make EFI directory and mount your EFI partition there
+```
+mkdir /boot/EFI
+mount /dev/nvme0n1p1 /boot/EFI
+```
+finnish setting up grub
+```
+grub-install --target=x86_64-efi  --bootloader-id=grub_uefi --recheck
+grub-mkconfig -o /boot/grub/grub.cfg
+```
+## Last things before finnishing installation
+install 
+```
+pacman -S base-devel network-manager
+```
+setup network manager
+```
+systemctl enable NetworkManager
+```
+## Reboot
+exit chroot
+```
+exit
+```
+unmount your file system
+```
+umount -R /mnt
+```
+shutdown pc
+```
+shutdown now
+```
+after that you can remove you usb stick with iso and boot into your arch installation
 
 
 
