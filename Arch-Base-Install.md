@@ -45,13 +45,13 @@ list all available disks
 ```
 fdisk -l
 ```
-now start partitioning your disk (it could be named /dev/sda, /dev/nvme0 or /dev/mmcblk0)
+now start partitioning your disk (it could be named /dev/sda, /dev/nvme0n1 or /dev/mmcblk0, for the rest of this guide I will use /dev/nvme0n1)
 ```
 fdisk YOUR_DISK
 ```
 .eg
 ```
-fdisk /dev/nvme0
+fdisk /dev/nvme0n1
 ```
 then view all the commands for fdisk
 ```
@@ -102,13 +102,24 @@ n
 (just press enter)
 (just press enter)
 ```
-and finnaly to save all your changes press w
+and finally to save all your changes press w
 ```
 w
 ```
-#
-
-
+# Format partitions
+format the EFI, SWAP and Linux file system partition
+```
+mkfs.fat -F32 /dev/nvme0n1p1
+mkswap dev/nvme0n1p2
+swapon dev/nvme0n1p2
+mkfs.ext4 dev/nvme0n1p3
+```
+# Install base
+```
+mount /dev/nvme0n1p3 /mnt
+pacstrap /mnt base linux linux-firmware
+genfstab -U /mnt >> /mnt/etc/fstab
+```
 
 
 
