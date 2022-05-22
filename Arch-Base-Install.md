@@ -114,13 +114,88 @@ mkswap dev/nvme0n1p2
 swapon dev/nvme0n1p2
 mkfs.ext4 dev/nvme0n1p3
 ```
-# Install base
+## Install base
 ```
 mount /dev/nvme0n1p3 /mnt
 pacstrap /mnt base linux linux-firmware
 genfstab -U /mnt >> /mnt/etc/fstab
 ```
-
+## Chroot
+```
+arch-chroot /mnt
+```
+### Setup clock and timezone again
+```
+ln -sf /usr/share/zoneinfo/REGION/CITY /etc/localtime
+hwclock --systohc 
+```
+### Download vim (basic vim commands: I to enter insert mode, Esc to exit insert mode, to exit and save :wq (also you have to be out of insert mode), to just exit without saving :q! (also you have to be out of insert mode))
+```
+pacman -S vim
+```
+### Setup for your keyboard layout
+```
+vim /etc/locale.gen
+locale-gen
+```
+### Setup your hostname (name of the machine)
+open /etc/hostname with vim
+```
+vim /etc/hostname
+```
+after that press I, write your hostname on the top , press esc and then press :wq
+```
+your_hostname_without_spaces_all_lowercap
+```
+.eg
+```
+my_pc
+```
+open /etc/hosts with vim
+```
+vim /etc/hosts
+```
+copy or retype this into /etc/hosts
+```
+127.0.0.1   localhost
+::1   localhost
+127.0.1.1   your_hostname.localdomain  your_hostname
+```
+.eg
+```
+127.0.0.1   localhost
+::1   localhost
+127.0.1.1   my_pc.localdomain  my_pc
+```
+### Setup root and user
+setup root password
+```
+passwd 
+```
+add your user, set his password and give him permissions
+```
+useradd -m YOUR_USERNAME
+passwd YOUR_USERNAME
+usermod -aG wheel,audio,video,optical,storage YOUR_USERNAME
+```
+### Setup sudo
+download sudo with pacman
+```
+pacman -S sudo
+```
+open sudo config with vim
+```
+EDITOR=vim visudo
+```
+find this line
+```
+#%wheel ALL=(ALL:ALL) ALL
+```
+press I and uncomment it so it looks like this
+```
+%wheel ALL=(ALL:ALL) ALL
+```
+save and exit by pressing Ecs and :wq
 
 
 
