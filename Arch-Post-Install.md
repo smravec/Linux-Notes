@@ -34,6 +34,10 @@ sudo systemctl disable getty@tty2.service
 ```
 sudo pacman -S firefox
 ```
+in firefox search bar type about:config then find and change this line to true
+```
+media.ffmpeg.vaapi.enabled
+```
 ### Misc
 ```
 yay -S acpi qeh kpcli alacritty
