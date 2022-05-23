@@ -30,3 +30,17 @@ update the grub config
 ```
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 ```
+### Fix Xorg scaling
+create and open .Xresources in ~/
+```
+vim ~/.Xresources
+```
+add this line
+```
+Xft.dpi: 192
+```
+<p> save and exit </p>
+<p>update the xorg config</p>
+```
+xrdb -merge ~/.Xresources
+```
