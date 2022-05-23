@@ -14,9 +14,9 @@ sudo pacman -Syu
 sudo pacman -S git
 ```
 
-### Desktop enviroment
+### Window manager
 ```
-sudo pacman -S xorg gnome
+sudo pacman -S xorg qtile
 ```
 ### Setup AUR
 ```
@@ -30,7 +30,3 @@ yay -S ly
 sudo systemctl enable ly.service
 sudo systemctl disable getty@tty2.service
 ```
-
-
-
-
