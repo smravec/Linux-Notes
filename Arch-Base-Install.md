@@ -34,7 +34,7 @@ set your timezone
 ```
 ln -sf /usr/share/zoneinfo/REGION/CITY /etc/localtime
 ```
-.eg
+e.g.
 ```
 ln -sf /usr/share/zoneinfo/Europe/Bratislava /etc/localtime
 ```
@@ -54,7 +54,7 @@ now start partitioning your disk (it could be named /dev/sda, /dev/nvme0n1 or /d
 ```
 fdisk YOUR_DISK
 ```
-.eg
+e.g.
 ```
 fdisk /dev/nvme0n1
 ```
@@ -115,9 +115,9 @@ w
 format the EFI, SWAP and Linux file system partition
 ```
 mkfs.fat -F32 /dev/nvme0n1p1
-mkswap dev/nvme0n1p2
-swapon dev/nvme0n1p2
-mkfs.ext4 dev/nvme0n1p3
+mkswap /dev/nvme0n1p2
+swapon /dev/nvme0n1p2
+mkfs.ext4 /dev/nvme0n1p3
 ```
 ## Install base
 ```
@@ -152,7 +152,7 @@ after that press I, write your hostname on the top , press esc and then press :w
 ```
 your_hostname_without_spaces_all_lowercap
 ```
-.eg
+e.g.
 ```
 my_pc
 ```
@@ -166,7 +166,7 @@ copy or retype this into /etc/hosts
 ::1   localhost
 127.0.1.1   your_hostname.localdomain  your_hostname
 ```
-.eg
+e.g.
 ```
 127.0.0.1   localhost
 ::1   localhost
@@ -240,7 +240,3 @@ shutdown pc
 shutdown now
 ```
 after that you can remove you usb stick with iso and boot into your arch installation
-
-
-
-
