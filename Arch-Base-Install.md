@@ -220,7 +220,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 ## Last things before finnishing installation
 install 
 ```
-pacman -S base-devel network-manager
+pacman -S base-devel network-manager wpa_supplicant intel-ucode linux-headers
 ```
 setup network manager
 ```
