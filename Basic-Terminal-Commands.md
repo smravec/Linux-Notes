@@ -65,8 +65,8 @@ e.g. (./ means in current directory)
 ```
 rm ./example.txt
 ```
-remove directory which is not empty (this will also remove all of its content)
--r flag stands for recursive (to recursively remove everything from that directory)
+remove directory which is not empty (this will also remove all of its content) </br>
+-r flag stands for recursive (to recursively remove everything from that directory) </br>
 -f flag stands for force (ignore any warnings)
 
 ```
