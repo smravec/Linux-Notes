@@ -39,8 +39,8 @@ add this line
 ```
 Xft.dpi: 192
 ```
-<p> save and exit </p>
-<p>update the xorg config</p>
+save and exit </br>
+update the xorg config
 ```
 xrdb -merge ~/.Xresources
 ```
