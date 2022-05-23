@@ -30,3 +30,14 @@ yay -S ly
 sudo systemctl enable ly.service
 sudo systemctl disable getty@tty2.service
 ```
+### Web browser
+```
+sudo pacman -S firefox
+```
+### Misc
+```
+yay -S acpi qeh kpcli alacritty
+```
+```
+sudo pacman -S cmatrix neofetch man-db man-pages
+```
