@@ -72,7 +72,7 @@ then create 3 partitions (EFI,SWAP and MAIN)
 n
 1
 (just press enter)
-+550M
++350M
 t
 1
 1
@@ -87,7 +87,7 @@ Now if using desktop pc set this to 5G if using laptop this should be at least y
 ```
 +YOUR_RAM_SIZE+FEWGB_OR_5G
 ```
-.eg my ram size is 32gb
+e.g. my ram size is 32gb
 ```
 +33G
 ```
