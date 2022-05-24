@@ -20,7 +20,7 @@ sudo pacman -S xorg qtile
 ```
 ### Setup AUR
 ```
-sudo git clone https://aur.archlinux.org/yay-git.git
+git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
 ```
