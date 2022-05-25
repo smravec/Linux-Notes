@@ -32,7 +32,7 @@ sudo systemctl disable getty@tty2.service
 ```
 ### Web browser
 ```
-sudo pacman -S firefox
+sudo pacman -S chromium
 ```
 in firefox search bar type about:config then find and change this line to true
 ```
