@@ -141,6 +141,10 @@ pacman -S vim
 ### Setup for your keyboard layout
 ```
 vim /etc/locale.gen
+```
+press i, uncomment en_US.UTF-8 UTF-8 </br>
+then press esc and :wq
+```
 locale-gen
 ```
 ### Setup your hostname (name of the machine)
@@ -148,7 +152,7 @@ open /etc/hostname with vim
 ```
 vim /etc/hostname
 ```
-after that press I, write your hostname on the top , press esc and then press :wq
+after that press i, write your hostname on the top , press esc and then press :wq
 ```
 your_hostname_without_spaces_all_lowercap
 ```
