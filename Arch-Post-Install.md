@@ -48,7 +48,8 @@ man-db and man-pages (manual about commands)</br>
 libmagick (cli file conversion)</br>
 krita (gui pixel art editor)</br>
 xclip (clipboard for xorg)</br>
-qemu (virtual machines)
+qemu (virtual machines)</br>
+xcb-util-cursor (fixes cursor size in qtile)
 ```
-sudo pacman -S cmatrix neofetch man-db man-pages libmagick krita xclip qemu
+sudo pacman -S cmatrix neofetch man-db man-pages libmagick krita xclip qemu xcb-util-cursor
 ```
