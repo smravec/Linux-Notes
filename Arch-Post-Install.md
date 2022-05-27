@@ -35,11 +35,20 @@ sudo systemctl disable getty@tty2.service
 sudo pacman -S chromium
 ```
 ### Misc
-download acpi(cli battery status),feh (cli image viewer),kpcli(cli password manager),alacritty(terminal emulator)
+download: </br> 
+acpi(cli battery status)</br>
+feh (cli image viewer)</br>
+kpcli(cli password manager)</br>
+alacritty(terminal emulator)
 ```
 yay -S acpi feh kpcli alacritty
 ```
-download cmatrix(cli animation),neofetch(os info),man-db and man-pages(manual about commands)
+download: </br>
+cmatrix(cli animation)</br>
+neofetch(os info)</br>
+man-db and man-pages(manual about commands)</br>
+libmagick(cli file conversion)
+kritta(gui pixel art editor)
 ```
-sudo pacman -S cmatrix neofetch man-db man-pages
+sudo pacman -S cmatrix neofetch man-db man-pages libmagick krita
 ```
