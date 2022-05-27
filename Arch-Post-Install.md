@@ -46,7 +46,9 @@ cmatrix (cli animation)</br>
 neofetch (os info)</br>
 man-db and man-pages (manual about commands)</br>
 libmagick (cli file conversion)</br>
-kritta (gui pixel art editor)
+krita (gui pixel art editor)</br>
+xclip (clipboard for xorg)</br>
+qemu (virtual machines)
 ```
-sudo pacman -S cmatrix neofetch man-db man-pages libmagick kritta
+sudo pacman -S cmatrix neofetch man-db man-pages libmagick krita xclip qemu
 ```
