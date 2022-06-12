@@ -213,7 +213,26 @@ save and exit by pressing Ecs and :wq
 bootctl install
 ```
 ```
+vim /boot/loader/loader.conf
 ```
+```
+default  arch.conf
+timeout  0
+console-mode max
+editor   no
+```
+```
+touch /boot/loader/entries/arch.conf
+vim /boot/loader/entries/arch.conf
+```
+```
+title   Arch Linux
+linux   /vmlinuz-linux
+initrd  /intel-ucode.img
+initrd  /initramfs-linux.img
+options root=/dev/nvme0n1p3 rw
+```
+
 ## Last things before finnishing installation
 install 
 ```
