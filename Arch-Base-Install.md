@@ -122,6 +122,8 @@ mkfs.ext4 /dev/nvme0n1p3
 ## Install base
 ```
 mount /dev/nvme0n1p3 /mnt
+mkdir /mnt/boot
+mount /dev/nvme0n1p1 /mnt/boot
 pacstrap /mnt base linux linux-firmware
 genfstab -U /mnt >> /mnt/etc/fstab
 ```
@@ -206,20 +208,11 @@ press I and uncomment it so it looks like this
 ```
 save and exit by pressing Ecs and :wq
 
-## Setup grub (bootloader)
-download required packages
+## Setup systemd bootloader
 ```
-pacman -S grub efibootmgr dosfstools os-prober mtools
+bootctl install
 ```
-make EFI directory and mount your EFI partition there
 ```
-mkdir /boot/EFI
-mount /dev/nvme0n1p1 /boot/EFI
-```
-finnish setting up grub
-```
-grub-install --target=x86_64-efi  --bootloader-id=grub_uefi --recheck
-grub-mkconfig -o /boot/grub/grub.cfg
 ```
 ## Last things before finnishing installation
 install 
