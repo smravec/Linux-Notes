@@ -173,7 +173,7 @@ copy or retype this into /etc/hosts
 e.g.
 ```
 127.0.0.1   localhost
-::1   localhost
+::1         localhost
 127.0.1.1   my_pc.localdomain  my_pc
 ```
 ### Setup root and user
