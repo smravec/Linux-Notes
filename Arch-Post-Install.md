@@ -32,8 +32,19 @@ sudo systemctl disable getty@tty2.service
 ```
 ### Web browser
 ```
-sudo pacman -S chromium
+sudo pacman -S firefox
 ```
+To enable hardware acceleration make sure that these settings in about:config are all set to true
+```
+media.ffmpeg.vaapi.enabled = true
+media.navigator.mediadatadecoder_vpx_enabled = true
+media.rdd-ffmpeg.enabled = true
+```
+also if using intel install
+```
+sudo pacman -S intel-media-driver
+```
+
 ### Misc 
 acpi (cli battery status)</br>
 feh (cli image viewer)</br>
