@@ -149,6 +149,10 @@ then press esc and :wq
 ```
 locale-gen
 ```
+### Setup UTF-8 fallback
+```
+echo "LANG=en_US.UTF-8" >> /etc/locale.conf
+```
 ### Setup your hostname (name of the machine)
 open /etc/hostname with vim
 ```
